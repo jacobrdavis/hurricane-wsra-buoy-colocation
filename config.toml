@@ -1,0 +1,11 @@
+[dirs]
+wsra = '../../data/WSRA/'
+nhc = '../../data/NHC_best_track/'
+atomic_swift = '../../data/ATOMIC/SWIFT/'
+
+[files]
+earl_drifters = '../../data/Hurricane_Earl_Sep2022/aggregated_data/hurricane_earl_drifter_data_v0.pickle'
+fiona_drifters = '../../data/Hurricane_Fiona_Sep2022/aggregated_data/hurricane_fiona_drifter_data_v0.pickle'
+ian_drifters = '../../data/Hurricane_Ian_Sep2022/aggregated_data/hurricane_ian_drifter_data_v2.pickle'
+idalia_drifters = '../../data/Hurricane_Idalia_Sep2023/aggregated_data/hurricane_idalia_drifter_data_v2.pickle'
+lee_drifters = '../../data/Hurricane_Lee_Sep2023/aggregated_data/hurricane_lee_drifter_data_v0.pickle'
