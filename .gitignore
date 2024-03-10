@@ -6,6 +6,8 @@ references/
 figures/
 *.gif
 *.png
+.DS_store
+*.pptx
 
 # C extensions
 *.so
