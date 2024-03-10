@@ -2,6 +2,7 @@
 wsra = '../../data/WSRA/'
 nhc = '../../data/NHC_best_track/'
 atomic_swift = '../../data/ATOMIC/SWIFT/'
+ibtracs = "../../data/IBTrACS/ibtracs.last3years.list.v04r00.csv"
 
 [files]
 earl_drifters = '../../data/Hurricane_Earl_Sep2022/aggregated_data/hurricane_earl_drifter_data_v0.pickle'

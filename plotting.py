@@ -79,7 +79,13 @@ default_drifter_marker_kwargs = {
         'zorder': 5,
     }
 }
-
+default_storm_center_kwargs = dict(
+    s=100,
+    edgecolor='k',
+    color='none',
+    zorder=10,
+    marker='o'
+)
 
 def configure_figures() -> None:
     plt.rcParams.update({'font.size': 12})
@@ -265,6 +271,16 @@ def plot_best_track(
     #             bbox=dict(boxstyle='circle,pad=0', fc='none', ec='none'))
     #     counter += 1
 
+def plot_storm_center(
+    wsra_ds: pd.DataFrame,
+    ax: GeoAxes,
+    **kwargs,
+) -> PathCollection:
+    kwargs = _set_kwarg_defaults(kwargs, default_storm_center_kwargs)
+    storm_longitude = wsra_ds['storm_longitude'].mean()
+    storm_latitude = wsra_ds['storm_latitude'].mean()
+    plot = ax.scatter(storm_longitude, storm_latitude, **kwargs)
+    return plot
 
 def tile_frequency(frequency_1d, length):
     return np.tile(frequency_1d, (length, 1))
@@ -318,3 +334,9 @@ def get_drifter_color(drifter_type):
 
 def get_multiindex_first(drifter_df, level=0):
     return drifter_df.groupby(level=level).first()
+
+def _set_kwarg_defaults(kwargs, default_kwargs):
+    for key in default_kwargs.keys():
+        if key not in kwargs:
+            kwargs[key] = default_kwargs[key]
+    return kwargs
